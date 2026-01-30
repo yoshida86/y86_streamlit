@@ -5,10 +5,11 @@ from ._third import manage as mn3
 from ._fourth import manage as mn4
 from ._fifth import manage as mn5
 from ._sixth import manage as mn6
+from ._seventh import manage as mn7
 
 def materials():
 
-    page = st.sidebar.selectbox('発表資料',['12/12資料','11/14資料','10/24資料','7/18資料','6/27資料','6/6資料'])
+    page = st.sidebar.selectbox('発表資料',['1/30資料','12/12資料','11/14資料','10/24資料','7/18資料','6/27資料','6/6資料'])
 
     if page == '6/6資料':
         
@@ -33,3 +34,7 @@ def materials():
     if page == '12/12資料':
 
         mn6.manager()
+
+    if page == '1/30資料':
+
+        mn7.manager()
