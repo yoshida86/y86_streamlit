@@ -20,14 +20,14 @@ def LCAmutation():
     V1 = st.slider(
     "頂点1を選んでください",
     min_value=1,
-    max_value=9,
+    max_value=14,
     value=0
     )
 
     V2 = st.slider(
     "頂点2を選んでください",
     min_value=1,
-    max_value=9,
+    max_value=14,
     value=0
     )
 
