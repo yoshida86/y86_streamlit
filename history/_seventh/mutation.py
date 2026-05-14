@@ -4,7 +4,7 @@ def mutation():
 
     st.header(':red[2.突然変異の拡張]',divider="red")
 
-    st.image('materials/_seventh/images/scoreflow.png')
+    st.image('history/_seventh/images/scoreflow.png')
 
     st.write("""
             LCAを使った突然変異×ランダムプリムの結果。  
