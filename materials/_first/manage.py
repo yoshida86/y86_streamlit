@@ -5,7 +5,7 @@ def manager():
     
     chapter = st.sidebar.selectbox("章選択",['streamlit','LCAexam'])
     
-    st.title('11/14資料')
+    st.title('5/15資料')
     st.divider()
 
     if chapter == 'streamlit':
