@@ -43,10 +43,10 @@ def Steiner():
     left,right = st.columns([1,1])
 
     with left:
-        st.image('images/steinerexample/examplegraph.jpg')
+        st.image('images/steinerexample/examplegraph.PNG')
 
     with right:
-        st.image('images/steinerexample/exampletree.jpg')
+        st.image('images/steinerexample/exampletree.PNG')
     
 
 
