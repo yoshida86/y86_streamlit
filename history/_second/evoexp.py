@@ -51,7 +51,7 @@ def evoexp():
 
     st.subheader(':red[2-5.進捗]')
     st.write('とりあえず、隣接行列から対応表と隣接リストもどきを作るところまで実装。')
-    with open('materials/_second/setdata.py','r',encoding='utf-8') as file:
+    with open('history/_second/setdata.py','r',encoding='utf-8') as file:
         code = file.read()
     st.code(code)
 

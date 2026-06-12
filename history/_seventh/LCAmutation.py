@@ -11,10 +11,10 @@ def LCAmutation():
                 u,vの共通する祖先のうち、最も根から遠いものを最小共通祖先という。  
                 """)
 
-    with open("materials/_seventh/RootedTree.pkl","rb") as f:
+    with open("history/_seventh/RootedTree.pkl","rb") as f:
         G = pickle.load(f)
 
-    with open("materials/_seventh/pos.pkl","rb") as f:
+    with open("history/_seventh/pos.pkl","rb") as f:
         pos = pickle.load(f)
 
     V1 = st.slider(
@@ -58,13 +58,13 @@ def LCAmutation():
 
     st.write("以下はそのためのクラス。今後拡張の予定がある(後述)ので、暫定。")
 
-    with open('materials/_seventh/program/RootedTreeNode.py','r',encoding='utf-8') as file:
+    with open('history/_seventh/program/RootedTreeNode.py','r',encoding='utf-8') as file:
         code = file.read()
     st.code(code)
 
     st.caption("これを辞書型で並べて根付き木として木を表現する")
     
-    with open('materials/_seventh/program/RootedTree.py','r',encoding='utf-8') as file:
+    with open('history/_seventh/program/RootedTree.py','r',encoding='utf-8') as file:
         code = file.read()
     st.code(code)
 

@@ -1,0 +1,4 @@
+Status: Optimal
+A = 42.0
+B = 16.0
+profit = 206.0

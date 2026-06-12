@@ -6,7 +6,7 @@ def making():
 
     st.subheader("・ランダムプリム",divider="blue")
     st.write("プリム法の加える辺をランダムにしたもの。")
-    with open('materials/_sixth/program/randprim.py','r',encoding='utf-8') as file:
+    with open('history/_sixth/program/randprim.py','r',encoding='utf-8') as file:
         code = file.read()
     st.code(code)
 
@@ -31,7 +31,7 @@ def making():
     
     st.subheader("・突然変異",divider="blue")
     st.write("重みが大きい辺を付け替えるやつ。")
-    with open('materials/_sixth/program/mutation.py','r',encoding='utf-8') as file:
+    with open('history/_sixth/program/mutation.py','r',encoding='utf-8') as file:
         code = file.read()
     st.code(code)
 

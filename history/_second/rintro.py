@@ -23,7 +23,7 @@ def rintro():
 
     st.subheader(':red[1-3.四則演算等、基本的な操作]')
     st.markdown('四則演算などは、大抵のプログラミング言語と同様。')
-    with open('materials/_second/test.R','r',encoding='utf-8') as file:
+    with open('history/_second/test.R','r',encoding='utf-8') as file:
         data = file.read()
     st.code(data)
     st.markdown('特徴的だと感じたのは挿入操作。')

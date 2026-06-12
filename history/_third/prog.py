@@ -8,7 +8,7 @@ def prog():
              ・エッジリストと隣接リストもどきを使ったbfs
              """)
 
-    with open('materials/_third/program/gsearch.py','r',encoding='utf-8') as file:
+    with open('history/_third/program/gsearch.py','r',encoding='utf-8') as file:
         code1 = file.read()
     st.code(code1)
 
@@ -20,14 +20,14 @@ def prog():
              ・評価の計算と、全域木二つを足すやつ
              """)
     
-    with open('materials/_third/program/score.py','r',encoding='utf-8') as file:
+    with open('history/_third/program/score.py','r',encoding='utf-8') as file:
         code2 = file.read()
     st.code(code2)
     st.caption("グラフのベクトルで1が立っている辺の重みだけを足していく")
 
     
 
-    with open('materials/_third/program/vectormerge.py','r',encoding='utf-8') as file:
+    with open('history/_third/program/vectormerge.py','r',encoding='utf-8') as file:
         code3 = file.read()
     st.code(code3)
     st.caption("ベクトルの各要素に、if文を使ってorの演算をしている")
