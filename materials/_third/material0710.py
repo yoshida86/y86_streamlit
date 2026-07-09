@@ -42,7 +42,7 @@ def prune():
              つまり、赤い頂点と辺は不要といえる。
              """)
 
-    st.image('images/steinerexample/prune.PNG')
+    st.image('images/steinerexample/prune.png')
 
 
 
