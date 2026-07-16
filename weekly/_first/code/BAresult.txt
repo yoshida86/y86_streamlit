@@ -1,0 +1,2 @@
+TimeLimit: 300
+Generation: 20032, Best: 92, BestVertices: 33
