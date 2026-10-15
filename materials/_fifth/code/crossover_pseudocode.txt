@@ -1,0 +1,90 @@
+Input: T1:親個体1, T2:親個体2
+Output: newT:子個体
+func crossover_main(T1,T2)
+
+    T1,T2 = T1,T2を根付き木に変換したもの //全個体に対して同じ頂点を根にしないと成立しない？
+    newT = crossover_and(T1,T2)
+
+    //T1,T2の葉がなくなるまで続ける
+    while(leaf1,leaf2 != 空集合):
+        
+        leaf1,leaf2 = T1の葉,T2の葉
+        
+        v = random(leaf1,leaf2どちらにも含まれる点)
+        P1 = T1上のvから'最初にnewTと合流する点'へのパス
+        P2 = T2上のvから'最初にnewTと合流する点'へのパス
+        
+        if(u:'v以外の頂点' in (P1 and P2)):
+            P1 = T1上のuvパス
+            P2 = T2上のuvパス
+            leaf1,leaf2 ← u
+
+        if(サイクル in (newT or P1)):
+            P1 = φ
+            fitness(P1) = 0
+        if(サイクル in (newT or P2)):
+            P2 = φ
+            fitness(P2) = 0
+
+        if(P1,P2 = φ):
+            return 0 //子を作らず終了
+        newT = newT ∪ (P1,P2のうちfitness高い方) 
+        
+        //冗長な点と辺を消去する関数
+        T1 = prunegraph(T1,P1,v)
+        T2 = prunegraph(T2,P2,v)
+
+    if(T1が空集合 or T2が空集合):
+        return newT
+
+    if サイクル in (newT ∪ T1):
+        T1 = φ
+        fitness(T1) = 0
+    if サイクル in (newT ∪ T2):
+        T2 = φ
+        fitness(T2) = 0
+    
+    if(T1,T2 = φ):
+        return 0 //子を作らず終了
+    
+    newT = newT ∪ (T1,T2のうちfitness高い方)
+
+    return newT
+
+
+
+Input: ind1:親個体1, ind2:親個体2
+Output: ret_edge:論理積を取った個体, ret_vertex:論理積を取った個体に含まれる頂点
+func crossover_and(ind1,ind2):
+    ret_edge = [0 for i in range(頂点数)]
+    ret_vertex = []
+
+    for i in range(辺数):
+        if ind1[i] == 1 and ind2[i] == 1:
+            ret_edge[i] = 1
+    
+    return ret_edge,ret_vertex
+
+
+
+Input: T:森グラフ P:T上のパス v:P上の最も深さが深い点
+Output T:冗長な点と辺を消去した森グラフ
+func prunegraph(T,P,v):
+    if(PがnewTに加えたパス):
+        T = T - P
+    else:
+        while(vがターミナルでない and vの子がない):
+            T = T - v
+            v = (vの親ノード)
+
+    return T
+
+
+
+Input: T:森
+Output fit: Tの評価値
+func fitness(T): //値が大きいほど評価が高い
+    ω = 'fitが負にならない程度に十分大きい定数'
+    fit = ω - (T上の辺の重みの総和)
+
+    return fit
