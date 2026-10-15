@@ -5,8 +5,8 @@ func crossover_main(T1,T2)
     T1,T2 = T1,T2を根付き木に変換したもの //全個体に対して同じ頂点を根にしないと成立しない？
     newT = crossover_and(T1,T2)
 
-    //T1,T2の葉がなくなるまで続ける
-    while(leaf1,leaf2 != 空集合):
+    //T1,T2どちらでも葉の頂点がなくなるまで続ける。
+    while(leaf1 ∩ leaf2 != 空集合):
         
         leaf1,leaf2 = T1の葉,T2の葉
         
